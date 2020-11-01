@@ -1,4 +1,4 @@
-# Neurotechnology Club: Washington University in St. Louis
+# Neurotechnology Club: WashU
 
 ## About
 Files related to constructing an EEG to describe attentional processes.
