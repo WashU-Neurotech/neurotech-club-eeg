@@ -2,10 +2,14 @@ import numpy as np
 import pandas as pd
 
 
-def get_data():
+def get_data(config):
+    subjects = config["data"]["subjects"]
+    datapath = config["settings"]["datapath"]
     # TODO: generalize and iterate over all files
     df_task = pd.read_csv("Data/Parker/parker new nback 1_27.11.20_18.01.15.md.bp.csv", skiprows=1)
     df_control = pd.read_csv("Data/Parker/parker control 2_25.11.20_19.19.36.md.pm.bp.csv", skiprows=1)
+    # for subj in subjects:
+    #     df_task = pd.read_csv(datapath + "/{_}")
     df_task.dropna(subset=["POW.AF4.Alpha"], inplace=True)
     df_control.dropna(subset=["POW.AF4.Alpha"], inplace=True)
 

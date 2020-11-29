@@ -1,10 +1,9 @@
 {
     "settings": {
-        "datapath": "/"
+        "datapath": "/Users/eddiechandler/Documents/WashU/Neurotechnology_Club/Data/OneDrive-2020-11-28-2"
     },
 
     "data": {
-
-        "subjects": []
+        "subjects": ["bradley", "johnathan", "vishal", "parker"]
     }
 }
