@@ -16,7 +16,7 @@
     },
 
     "train": {
-        "epochs": 100,
-        "learning_rate": 0.01
+        "epochs": 250,
+        "learning_rate": 0.001
     }
 }

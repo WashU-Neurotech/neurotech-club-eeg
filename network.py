@@ -54,4 +54,4 @@ def train_network(config):
 
     print("\n\n--------------- Training Complete ---------------\n\n")
 
-    model.save_weights(config["settings"]["root_path"] + "results/saved_models/end_weights/{}.json".format(model_name))
+    model.save_weights(config["settings"]["root_path"] + "results/saved_models/end_weights/{}/end_weights".format(model_name,model_name))
