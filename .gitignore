@@ -1,3 +1,12 @@
 __pycache__
 .ipynb_checkpoints
 .DS_Store
+results/saved_models/configs/*
+!results/saved_models/configs/README.md
+results/saved_models/architectures/*
+!results/saved_models/architectures/README.md
+results/saved_models/end_weights/*
+!results/saved_models/end_weights/README.md
+
+results/tensorboard_callbacks/*
+!results/tensorboard_callbacks/README.md

@@ -5,7 +5,7 @@ import glob
 
 def get_data(config):
     subjects = config["data"]["subjects"]
-    datapath = config["settings"]["datapath"]
+    datapath = config["settings"]["data_path"]
     print(len(glob.glob(datapath+"*.csv")))
 
     count = 0
