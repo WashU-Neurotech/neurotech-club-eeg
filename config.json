@@ -1,9 +1,25 @@
 {
     "settings": {
-        "datapath": "/Users/eddiechandler/Documents/WashU/Neurotechnology_Club/Data/OneDrive-2020-11-28-2"
+        "root_path": "E:\\WashU\\Neurotech_Club\\neurotech-club-eeg\\",
+        "data_path": "E:\\WashU\\Neurotech_Club\\Data\\OneDrive-2020-11-28-2\\"
     },
 
     "data": {
         "subjects": ["bradley", "johnathan", "vishal", "parker"]
+    },
+
+    "model": {
+        "model_type": "dnn_binary",
+        "baby_binary": {
+            "num_hidden_layer_nodes": 64
+        },
+        "dnn_binary": {
+            "hidden_layers": [32, 32]
+        }
+    },
+
+    "train": {
+        "epochs": 400,
+        "learning_rate": 0.001
     }
 }
