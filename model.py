@@ -26,7 +26,11 @@ def dnn_binary(input_shape,
 
     X = X_input
     for num_nodes in hidden_layers:
-        X = Dense(num_nodes, activation="relu")(X)
+        X = Dense(num_nodes, activation="relu",
+            kernel_regularizer=tf.keras.regularizers.l2(1e-4),
+            bias_regularizer=tf.keras.regularizers.l2(1e-4))(X)
     X = Dense(1, activation="sigmoid")(X)
 
     model = Model(inputs=X_input, outputs=X)
+
+    return model

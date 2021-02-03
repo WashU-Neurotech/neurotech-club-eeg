@@ -18,7 +18,7 @@ def get_data(config):
         for f in subj_files:
             count+=1
             
-            task_type = f.split("/")[-1].split("_")[1] # nback or control
+            task_type = f.split("\\")[-1].split("_")[1] # nback or control
             
             print(task_type)
             temp = pd.read_csv(f, skiprows=1)
