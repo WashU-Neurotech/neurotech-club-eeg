@@ -1,6 +1,6 @@
-# Neurotech Club GitHub - TODO - Fill this out
+# Neurotech Club GitHub
 
-Foobar is a Python library for dealing with word pluralization.
+This repo contains WashU Neurotech Club's code for our EEG BCI.
 
 ## Installation
 
