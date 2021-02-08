@@ -16,6 +16,10 @@ Please set all hyperparameters for the model in config.json. When creating new m
 please ensure that all hyperparameters of interest can be adjusted in config.json so that there is only ONE place 
 to do so. This may be a bit annoying, but the config.json files are saved in results/saved_models/configs so that we
 know exactly how we built a specific model.
+
+Possible values for EEG data (please write EXACTLY as below: there are currently no checks in code for this, so a typo may break it!!):
+* electrodes : AF3, F7, F3, FC5, T7, P7, O1, O2, P8, T8, FC6, F4, F8, AF4
+* waves (can be an empty array if you only want raw signal): Theta, Alpha, BetaL, BetaH, Gamma
 ```json
 {
     "settings": {
