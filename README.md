@@ -45,6 +45,7 @@ know exactly how we built a specific model.
     }
 }
 ```
+Once the hyperparameters are set to your desire, run the following.
 ```bash
 python main.py
 ```
