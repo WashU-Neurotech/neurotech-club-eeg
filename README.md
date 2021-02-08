@@ -12,6 +12,10 @@ conda env create -f neurotech_club_env.yml
 ```
 
 ## Usage
+Please set all hyperparameters for the model in config.json. When creating new model types and modifying old ones,
+please ensure that all hyperparameters of interest can be adjusted in config.json so that there is only ONE place 
+to do so. This may be a bit annoying, but the config.json files are saved in results/saved_models/configs so that we
+know exactly how we built a specific model.
 ```json
 {
     "settings": {
