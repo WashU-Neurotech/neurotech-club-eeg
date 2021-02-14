@@ -4,10 +4,13 @@ import glob
 
 
 def get_data(config):
-    subjects = config["data"]["subjects"]
+    # Get important variables from config
     datapath = config["settings"]["data_path"]
-    print(len(glob.glob(datapath+"*.csv")))
+    subjects = config["data"]["subjects"]
+    electrodes = config["data"]["electrodes"]
+    waves = config["data"]["waves"]
 
+    print(len(glob.glob(datapath+"*.csv")))
     count = 0
 
     df_task = []
@@ -37,20 +40,30 @@ def get_data(config):
                 None
                 # TODO: warning
 
+    regexp = "Timestamp|"
+    for electrode in electrodes:
+        regexp += "EEG." + electrode + "|" # Get signal from EEG electrode (I'm assuming we will want this for every model; if we do not, add an extra hyperparameter to config)
+        for wave in waves:
+            regexp += "POW." + electrode + "." + wave + "|"     
+    regexp = regexp[:-1] # remove the final |
 
-    df_task.dropna(subset=["POW.AF4.Alpha"], inplace=True)
-    df_control.dropna(subset=["POW.AF4.Alpha"], inplace=True)
+    print("regex to pass to dataframe:\n\n" + regexp + "\n\n")
+    
+    if len(waves) > 0: # The headset picks up the waves less frequently than the raw EEG signal, drop these rows. Again, if need more control, please add hyperparam to config
+        df_task.dropna(subset=["POW.AF3.BetaL"], inplace=True)
+        df_control.dropna(subset=["POW.AF3.BetaL"], inplace=True)
 
-    df_task = df_task.filter(regex="Timestamp|EEG.AF|EEG.F|BetaL")
-    df_task = df_task.filter(regex="Timestamp|EEG.AF|EEG.F|POW.F|POW.AF")
+    df_task = df_task.filter(regex=regexp)
     df_task.set_index("Timestamp", inplace=True)
     df_task["Label"] = 1
+    print("df_task.head():")
+    print(df_task.head())
 
-    df_control = df_control.filter(regex="Timestamp|EEG.AF|EEG.F|BetaL")
-    df_control = df_control.filter(regex="Timestamp|EEG.AF|EEG.F|POW.F|POW.AF")
+    df_control = df_control.filter(regex=regexp)
     df_control.set_index("Timestamp", inplace=True)
     df_control["Label"] = 0
-
+    print("df_control.head():")
+    print(df_control.head())
 
     # shuffle task and no task data
     df_all = pd.concat([df_task, df_control])
