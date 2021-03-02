@@ -28,6 +28,7 @@ Possible values for EEG data (please write EXACTLY as below: there are currently
     },
 
     "data": {
+        "experiment_types": ["array", "of", "experiment", "types"],
         "subjects": ["array", "of", "subjects"],
         "electrodes": ["array", "of", "electrodes"],
         "waves": ["array", "of", "waves"]
@@ -36,10 +37,18 @@ Possible values for EEG data (please write EXACTLY as below: there are currently
     "model": {
         "model_type": "name_of_model_to_use_see_below",
         "baby_binary": {
-            "num_hidden_layer_nodes": <int_num_nodes>
+            "num_hidden_layer_nodes": <int_num_nodes>,
+            "kernel_regularize": {
+                "type":"either l1 or l2",
+                "amount": <amount of regularization>
+            }
         },
         "dnn_binary": {
-            "hidden_layers": [<int_num_nodes_layer_1>, <int_num_nodes_layer_2>, ...]
+            "hidden_layers": [<int_num_nodes_layer_1>, <int_num_nodes_layer_2>, ...],
+            "kernel_regularize": {
+                "type":"either l1 or l2",
+                "amount": <amount of regularization>
+            }
         }
     },
 
