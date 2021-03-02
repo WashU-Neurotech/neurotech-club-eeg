@@ -1,22 +1,30 @@
 {
     "settings": {
         "root_path": "E:\\WashU\\Neurotech_Club\\neurotech-club-eeg\\",
-        "data_path": "E:\\WashU\\Neurotech_Club\\Data\\OneDrive-2020-11-28-2\\"
+        "data_path": "E:\\WashU\\Neurotech_Club\\Data\\"
     },
 
     "data": {
         "subjects": ["bradley", "johnathan", "vishal", "parker"],
         "electrodes": ["AF3", "F7", "F3", "FC5", "FC6", "F4", "F8", "AF4"],
-        "waves": ["BetaL"]
+        "waves": ["BetaL", "Alpha", "Theta"]
     },
 
     "model": {
         "model_type": "dnn_binary",
         "baby_binary": {
-            "num_hidden_layer_nodes": 64
+            "num_hidden_layer_nodes": 32,
+            "kernel_regularize": {
+                "type":"l2",
+                "amount": 1e-4
+            }
         },
         "dnn_binary": {
-            "hidden_layers": [32, 32]
+            "hidden_layers": [32, 32],
+            "kernel_regularize": {
+                "type":"l2",
+                "amount": 1e-4
+            }
         }
     },
 

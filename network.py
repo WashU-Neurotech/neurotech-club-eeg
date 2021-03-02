@@ -7,6 +7,8 @@ def train_network(config):
     model_type = config["model"]["model_type"]
     epochs = config["train"]["epochs"]
     learning_rate = config["train"]["learning_rate"]
+    kernel_regularizer_type = config["model"][model_type]["kernel_regularize"]["type"]
+    kernel_regularizer_amount = config["model"][model_type]["kernel_regularize"]["amount"]
 
     train_data, val_data = get_data(config)
 
@@ -16,10 +18,14 @@ def train_network(config):
 
     if model_type == "baby_binary":
         model = baby_binary(train_data[0].shape[1], 
-                        num_hidden_layer_nodes=config["model"]["baby_binary"]["num_hidden_layer_nodes"])
+                        num_hidden_layer_nodes=config["model"]["baby_binary"]["num_hidden_layer_nodes"],
+                        kernel_regularizer_type=kernel_regularizer_type,
+                        kernel_regularizer_amount=kernel_regularizer_amount)
     elif model_type == "dnn_binary":
         model = dnn_binary(train_data[0].shape[1],
-                        hidden_layers=config["model"]["dnn_binary"]["hidden_layers"])
+                        hidden_layers=config["model"]["dnn_binary"]["hidden_layers"],
+                        kernel_regularizer_type=kernel_regularizer_type,
+                        kernel_regularizer_amount=kernel_regularizer_amount)
     else:
         quit("Check model name in config. {} does not exist as a model.".format(model_type))
 
