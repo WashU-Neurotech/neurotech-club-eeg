@@ -6,6 +6,7 @@ import glob
 def get_data(config):
     # Get important variables from config
     datapath = config["settings"]["data_path"]
+    experiment_types = config["settings"]["experiment_types"]
     subjects = config["data"]["subjects"]
     electrodes = config["data"]["electrodes"]
     waves = config["data"]["waves"]
@@ -31,7 +32,7 @@ def get_data(config):
             print(task_type)
             temp = pd.read_csv(f, skiprows=1)
 
-            if task_type in ["nback", "stroop", "sart", "posner"]:
+            if task_type in experiment_types:
                 if len(df_task_train):
                     df_task_train = pd.concat([df_task_train, temp], axis=0)
                 else:

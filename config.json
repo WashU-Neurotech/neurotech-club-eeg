@@ -5,6 +5,7 @@
     },
 
     "data": {
+        "experiment_types": ["nback", "stroop", "sart", "posner"],
         "subjects": ["bradley", "johnathan", "vishal", "parker"],
         "electrodes": ["AF3", "F7", "F3", "FC5", "FC6", "F4", "F8", "AF4"],
         "waves": ["BetaL", "Alpha", "Theta"]
