@@ -1,9 +1,13 @@
 {
     "settings": {
-        "datapath": "/Users/eddiechandler/Documents/WashU/Neurotechnology_Club/Data/OneDrive-2020-11-28-2"
+        "datapath": "/Users/eddiechandler/Documents/WashU/Neurotechnology_Club/Data/OneDrive-2020-11-28-2",
+        "repo": "v-puppala/Neurotech-Data",
+        "repo_directory": "OneDrive-2021-02-13",
+        "git_access_token": "Get Your Own From Github Settings => Developer Settings, then paste here"
     },
 
     "data": {
         "subjects": ["bradley", "johnathan", "vishal", "parker"]
     }
+
 }
