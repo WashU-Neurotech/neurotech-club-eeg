@@ -22,8 +22,11 @@ Possible values for EEG data (please write EXACTLY as below: there are currently
 * waves (can be an empty array if you only want raw signal): Theta, Alpha, BetaL, BetaH, Gamma
 
 Cloud Stuff:
+
 Put the repo name in the repo thing. 
-If csv's are stores in root repo directory, then leave repo_repository blank. 
+
+If csv's are stored in root repo directory, then leave repo_repository blank. 
+
 Remember to get your own git access token from Settings => Developer Settings, then paste it in the space given
 
 ```json
