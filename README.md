@@ -20,12 +20,14 @@ know exactly how we built a specific model.
 Possible values for EEG data (please write EXACTLY as below: there are currently no checks in code for this, so a typo may break it!!):
 * electrodes : AF3, F7, F3, FC5, T7, P7, O1, O2, P8, T8, FC6, F4, F8, AF4
 * waves (can be an empty array if you only want raw signal): Theta, Alpha, BetaL, BetaH, Gamma
-```json
 
 Cloud Stuff:
 Put the repo name in the repo thing. 
 If csv's are stores in root repo directory, then leave repo_repository blank. 
 Remember to get your own git access token from Settings => Developer Settings, then paste it in the space given
+
+```json
+
 {
     "settings": {
         "root_path": "Directory in which main.py is stored",
