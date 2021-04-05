@@ -21,6 +21,11 @@ Possible values for EEG data (please write EXACTLY as below: there are currently
 * electrodes : AF3, F7, F3, FC5, T7, P7, O1, O2, P8, T8, FC6, F4, F8, AF4
 * waves (can be an empty array if you only want raw signal): Theta, Alpha, BetaL, BetaH, Gamma
 ```json
+
+Cloud Stuff:
+Put the repo name in the repo thing. 
+If csv's are stores in root repo directory, then leave repo_repository blank. 
+Remember to get your own git access token from Settings => Developer Settings, then paste it in the space given
 {
     "settings": {
         "root_path": "Directory in which main.py is stored",
@@ -46,6 +51,12 @@ Possible values for EEG data (please write EXACTLY as below: there are currently
     "train": {
         "epochs": <int_num_epochs>,
         "learning_rate": <int_learning_rate>
+    },
+
+    "cloud":{
+        "repo": "v-puppala/Neurotech-Data",
+        "repo_directory": "OneDrive-2021-02-13",
+        "git_access_token": "Get Your Own From Github Settings => Developer Settings, then paste in this space"
     }
 }
 ```
