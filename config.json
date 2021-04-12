@@ -23,5 +23,11 @@
     "train": {
         "epochs": 400,
         "learning_rate": 0.001
+    },
+
+    "cloud":{
+        "repo": "v-puppala/Neurotech-Data",
+        "repo_directory": "OneDrive-2021-02-13",
+        "git_access_token": "Get Your Own From Github Settings => Developer Settings, then paste in this space"
     }
 }
